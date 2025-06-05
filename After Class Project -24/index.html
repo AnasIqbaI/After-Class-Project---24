@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>After Class Project - 24</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    </head>
+    <body>
+      <header>
+            <h2 class="logo">ACP 24</h2>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Category</a>
+                <a href="#">Class</a>
+                <button class="btnLogin-popup">Dashboard</button>
+            </nav>
+      </header>
+    <div class="center-box" id="resultBox"></div>
+    <script>
+      // Base class with static method
+      class Person {
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+        static description() {
+          return "This is a Person class.";
+        }
+        getDetails() {
+          return `Name: ${this.name}, Age: ${this.age}`;
+        }
+      }
+
+      // Inherited class
+      class Student extends Person {
+        constructor(name, age, grade) {
+          super(name, age);
+          this.grade = grade;
+        }
+        getDetails() {
+          return `${super.getDetails()}, Grade: ${this.grade}`;
+        }
+      }
+
+      // Create instance and display
+      const student = new Student("Alex", 20, "A");
+      const box = document.getElementById("resultBox");
+      box.innerHTML = `
+        <strong>${Student.description()}</strong><br>
+        ${student.getDetails()}
+      `;
+    </script>
+    </body>
+
+    
+</html>
